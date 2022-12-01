@@ -21,7 +21,24 @@ namespace advent2022 {
         }
 
         public string Question2() {
-            return "";
+            string[] lines = System.IO.File.ReadAllLines(@"Data\input1.1.txt");
+
+            var calList = new List<int>();
+            int localCal = 0;
+
+            foreach (string str in lines)
+            {
+                if(str.Length == 0) {
+                    calList.Add(localCal);
+                    localCal = 0;
+                } else {
+                    localCal += Int32.Parse(str);  
+                }
+            }
+
+            calList.Sort();
+
+            return (calList.ElementAt(calList.Count()-1) + calList.ElementAt(calList.Count()-2) + calList.ElementAt(calList.Count()-3)).ToString();
         }
     }
 }
