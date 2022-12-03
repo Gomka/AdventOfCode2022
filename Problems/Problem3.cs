@@ -24,7 +24,27 @@ namespace advent2022 {
         }
 
         public string Question2() {
-            return "";
+            string[] lines = System.IO.File.ReadAllLines(@"Data\input3.1.txt");
+
+            int priorities = 0;
+
+            for (int i = 0; i < lines.Length; i+=3)
+            {
+                string first = lines[i];
+                string second = lines[i+1];
+                string third = lines[i+2];
+
+                var aux = first.Intersect(second);
+                var commonChars = aux.Intersect(third);
+
+                if(Char.IsLower(commonChars.ElementAt(0))) {
+                    priorities += commonChars.ElementAt(0) - 96;
+                } else {
+                    priorities += commonChars.ElementAt(0) - 38;
+                }
+            }
+
+            return priorities.ToString();
         }
     }
 }
