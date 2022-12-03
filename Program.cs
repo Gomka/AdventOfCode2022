@@ -16,3 +16,10 @@ Console.WriteLine("\n\n                     Advent of Code 2022                 
     Console.WriteLine("Solution 1: " + problem2.Question1());
     Console.WriteLine("Solution 2: " + problem2.Question2());
 #endregion
+
+#region Problem3
+    Console.WriteLine("\n-------- Problem 3:\n");
+    Problem3 problem3 = new Problem3();
+    Console.WriteLine("Solution 1: " + problem3.Question1());
+    Console.WriteLine("Solution 2: " + problem3.Question2());
+#endregion
