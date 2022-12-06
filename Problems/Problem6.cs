@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Generic;
 
 namespace advent2022 {
     public class Problem6 {
@@ -28,7 +28,27 @@ namespace advent2022 {
         }
 
         public string Question2() {
-            return "";
+            string[] lines = System.IO.File.ReadAllLines(@"Data\input6.1.txt");
+            HashSet<char> chars = new HashSet<char>();
+            int count = 14;
+
+            for (int i = 13; i < lines[0].Length; i++) {
+
+                for (int j = 0; j < 14; j++)
+                {
+                    chars.Add(lines[0][i-j]);
+                }
+                
+                if(chars.Count == 14) {
+                    break;
+                } else {
+                    chars.Clear();
+                    count++;
+                }
+
+            }
+
+            return count.ToString();
         }
     }
 }
